@@ -1,2 +1,2 @@
 # GetAc
-Dette funker
+#funker det nå?
