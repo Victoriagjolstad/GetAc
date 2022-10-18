@@ -1,2 +1,0 @@
-# GetAc
-#funker det nå?
