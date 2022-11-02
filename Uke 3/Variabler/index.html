@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // My age as a number og variablen kommer til å endre seg. Står det const, kommer ikke variabelen være mulig å endres. 
+let myAge = 30;
+
+
+// denne variabelen kommer til å endre seg og dermed får let
+let earlyYears = 2
+earlyYears *= 10.5;
+console.log(earlyYears);
+
+let laterYears = myAge -= 2;
+console.log(laterYears);
+
+laterYears *= 4;
+console.log(laterYears);
+
+//Hvor gammel jeg er i hudeår
+let myAgeInDogYears = earlyYears + laterYears;
+console.log(myAgeInDogYears);
+
+myAge += 2;
+
+const myName = 'Victoria'
+console.log(`My name is ${myName}. I am ${myAge} years old in human years which is ${myAgeInDogYears} years old in dog years.`);
+</script>
+</html>
