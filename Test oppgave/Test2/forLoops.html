@@ -1,0 +1,184 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div id="app"></div>
+
+</body>
+
+<script>
+    // Model
+    let textString = 'hello world, Simen er best';
+    let reversertTxt = '';
+    let correctWay = '';
+    let vocals = ['a', 'e', 'i', 'o', 'æ', 'ø', 'å'];
+    let teller = 0;
+    let teller2 = 0;
+    let teller3 = 0;
+    let teller4 = 0;
+    let temp = '';
+    let temp2 = '';
+    let temp3 = [];
+    let newTextString = '';
+    let listeAvOrd = '';
+
+    // View
+    // show()
+    // function show() {
+    //     let HTML = document.getElementById('app').innerHTML = `
+
+    //     test
+    //     `;
+
+    // }
+
+    // Reverse for loop
+    removeV2()
+    removingVocals()
+    listingVocalsUpperCase()
+    listingVocals()
+    counting()
+    countVocals()
+    show()
+    function show() {
+        let HTML = '';
+        for (let index = textString.length - 1; index > 0; index--) {
+            reversertTxt += textString[index];
+            console.log(reversertTxt, "Reverser tekst")
+        }
+        for (let index = 0; index < textString.length; index++) {
+            correctWay += textString[index];
+            console.log(correctWay, 'Looper igjennom')
+
+        }
+
+        HTML += /*HTML*/ `
+        ${reversertTxt} <- Reverserer teksen <BR>
+        ${correctWay} <- Looper igjennom teksten <BR>
+        ${teller} <- Teller antall E'er i tekstringen <BR>
+        ${teller2}<BR>
+            ${teller3}<BR>
+                ${teller4}<BR>
+            ${temp}<BR>
+            ${temp2}<BR>
+                ${newTextString} 
+            ${temp3}<BR>
+    `;
+        document.getElementById('app').innerHTML = HTML;
+    }
+
+    // Controller
+
+    // Teller antall bokstaver E i en string, kan fortsette på else if
+    function countVocals() {
+        for (let index = 0; index < textString.length; index++) {
+            if (textString[index] == "e") {
+                teller++;
+            }
+        }
+    }
+
+    // Teller antall vokaler i en string
+  function counting(){
+    for (let index = 0; index < textString.length; index++) {
+        for (let j = 0; j < vocals.length; j++) {
+            if(textString[index]===vocals[j]){
+                teller2++;
+            }
+        }
+        
+        
+    }
+  }
+
+    //  Lister opp voklanene
+    // charAt() tar ut bokstaven i en stringtextString
+         function listingVocals (){
+            for (let index = 0; index < textString.length; index++) {
+                for (let j = 0; j < vocals.length; j++) {
+                    if(textString[index]===vocals[j]){
+                    teller3++;
+                    temp += vocals[j]
+                    
+                }
+                console.log(temp)
+            }
+         }
+        }
+
+        // Upperase for vocaler i en string
+        function listingVocalsUpperCase (){
+            for (let index = 0; index < textString.length; index++) {
+                for (let j = 0; j < vocals.length; j++) {
+                    if(textString[index]===vocals[j]){
+                    teller4++;
+                    temp2 += vocals[j].toUpperCase();
+                    
+                    
+                    
+                }
+                console.log(temp2)
+            }
+         }
+        }
+                        // "hallo" feks
+                        // Fjerner vokalene fra et ord
+                        // includes sjekker arrayet opp mot hver gang den looper igjennom stringen som blir sendt, hver index avarrayet
+                        // splice tar ut vokalen fra index posisjonen [posisjonen den skal fjerne, hvor mange den skal fjerne]
+                        // Join slår det sammen igjen ("her kan man putte inn mellomrom eller det man vil ha i mellom")
+        function removeV(ordet){
+            let listeAvOrd = ordet.split(""); 
+            for (let i = ordet.length; i > 0 ; i--) {
+                                        //"o" 
+                if(vocals.includes(listeAvOrd[i])){
+                    listeAvOrd.splice(i,1);
+                       } 
+            }
+             console.log(listeAvOrd.join("")) 
+        }
+        
+        function removeV2(){                       
+            let listeAvOrd = textString.split(""); //"h e l l o w o r l d , S i m e n e r b e s t"
+            for (let i = textString.length; i > 0 ; i--) { //looper baklengs
+                                        //"o" 
+                if(vocals.includes(listeAvOrd[i])){
+                    listeAvOrd.splice(i,1);
+                       }
+            }
+             console.log(listeAvOrd.join(""))  // hll wrld, Smn r bst
+        }
+
+        // Fjerne voklaer fra en string
+        function removingVocals (){
+            for (let index = 0; index < textString.length; index++) {
+                for (let j = 0; j < vocals.length; j++) {
+                    if(textString[index]===vocals[j]){
+                       temp3.push(vocals[j])
+                        }
+                    }
+                       
+                    }
+                }
+            
+           
+        
+
+     //     for (let index = 0; index < vocals.length; index++) 
+        //         const vocalStringen = vocals[index];
+        //         if (vocalStringen == textStringen)
+        //             console.log(vocalStringen,textStringen)
+                
+        //     }
+            
+        // }
+
+</script>
+
+</html>
