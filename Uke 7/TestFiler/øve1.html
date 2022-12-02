@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href=https://fonts.googleapis.com/css?family=Open+Sans:400,600,300 rel='stylesheet' type='text/css'>
+    <title>Test Ark</title>
+</head>
+<style>
+    body {
+        font-family: 'Open Sans';
+        font-size: 20px;
+    }
+
+   
+   #app {
+    display: grid;
+    place-items: center;
+   }
+
+    #myDiv {
+        width: 50%;
+        padding: 45px;
+        text-align: center;
+        background-color: lightblue;
+        margin-top: 20px;
+    }
+
+    button {
+        width: 175px;
+        height: 60px;
+        border-radius: 15px;
+        margin: 1px; 
+        background: rgba(121, 149, 149, 0.64);
+        font-size: 17px;
+        color: #536C6C;
+        
+    }
+
+    button:hover {
+        background: #799595;
+        font-style: bold;
+        font-weight: 800;
+        
+    }
+</style>
+
+<body>
+    <div id="app"></div>
+    
+    
+    
+    
+    
+</body>
+<script>
+    // Model
+    let str = 'Hello World!';
+    let emptyStr = '';
+    let emptyStr2 = '';
+    let emptyStr3 = '';
+    let emptyStr4 = '';
+    let vocals = ['a', 'e', 'i', 'o'];
+
+    // View
+    reverseStr()
+    clickStr()
+    removeVocals()
+    removecommas();
+    show()
+    function show() {
+        let HTML = '';
+
+        HTML += /*HTML*/`
+    <h1>${str}</h1><BR>
+    <button onclick="clickStr()">Vanlig String</button>
+    <button onclick="reverseStr()">Reverse String</button>
+    <button onclick="removeVocals()">Fjern Vokaler</button>
+    <button onclick="showStr()">Åpne og Lukke</button>
+    <button onclick="restStr()">Rest String</button>
+    <div id="myDiv">${emptyStr}${emptyStr2}${emptyStr4}</div> <BR>
+    
+
+    
+    `;
+        document.getElementById('app').innerHTML = HTML;
+        
+    }
+
+    // Controller
+    function reverseStr() {
+        for (let i = str.length - 1; i > 0; i--) {
+            emptyStr += str[i] + " ";
+        } console.log(emptyStr);
+        show();
+    }
+
+
+    function clickStr() {
+        for (let index = 0; index < str.length; index++) {
+            emptyStr2 += str[index] + " ";
+
+        }
+        show();
+    }
+
+    function removeVocals() {
+        emptyStr3 = str.split('');
+        for (let i = str.length; i > 0; i--) {
+            if(vocals.includes(emptyStr3[i])){
+                emptyStr3.splice(i,1)
+                
+            } 
+        } 
+        console.log(emptyStr3.join(' '))
+        removecommas();
+        emptyStr4 += emptyStr3;
+        show();
+    }
+function removecommas(){
+    return emptyStr3 = emptyStr3.join(' ');
+}
+
+    function showStr() {
+        let show = document.getElementById('myDiv');
+        if (show.style.display === 'none') {
+            show.style.display = 'block';
+        } else {
+            show.style.display = 'none';
+        }
+
+    }
+    function restStr() {
+        emptyStr = ('');
+        emptyStr2 = ('');
+        emptyStr3 = ('');
+        emptyStr4 = ('');
+        show();
+    }
+
+</script>
+
+</html>
