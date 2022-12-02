@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link href=https://fonts.googleapis.com/css?family=Open+Sans:400,600,300 rel='stylesheet' type='text/css'>
+
+    <title>Document</title>
+
+
+</head> 
+<body>
+    <h1 class="boxing">The Coffee Shop</h1>
+    <nav> 
+        <div class="container" class="bold">Meny</div>
+            <div>Latte</div>
+            <div>Latte Macciatho</div>
+            <div>Matcha</div>
+            <div>Espresso</div>
+    </nav>
+
+    <p></p>
+   
+    <main class="container">
+        <div class="box">
+            Denne siden skal bli en Coffee Shop side
+        </div>
+        <div class="box">
+            Denne siden skal bli oversiktelig med et display. Det at den oppdaterer seg
+            automatisk gjør det enklere for meg å se hva jeg holder på med. 
+            Dette skal bli morro.
+        </div>
+        <div class="box">
+            Et lite prosjekt for meg selv. Og finne litt ut av ting jeg ikke kan, for det er ganske 
+            mye jeg ikke kan atm. Men jeg vil alltids at ting skal se bra ut. La oss prøve på noe god CSS. 
+        </div>
+        <div class="box">
+            Denne siden skal bli en kaffe side for å kunne velge kaffe. Legge det til i en kurv.
+        </div>
+    </main>
+    
+</body>
+
+
+<style>
+    /*text style*/
+    body {
+        position: fixed;
+        background:linear-gradient(180deg, rgba(231, 212, 194, 0.5) 10%, rgba(201, 177, 164, 0.18) 50.1%, rgba(216, 206, 200, 0.1) 90.74%);
+        mix-blend-mode: normal;
+        width: 1610px;
+        height: 2225px;
+        font-family: 'Open Sans';}
+
+    h1 {
+        font-family: 'Open Sans';
+        font-style: light;
+        font-weight: 300;
+        font-size: 150px;
+        line-height: 204px;
+        text-align: center;
+        text-transform: capitalize;
+        font-feature-settings: 'tnum' on, 'lnum' on;
+        position: center;
+
+        color: #4B2A2A;}
+    
+        .bold {
+            font-style: bold;
+        }
+    
+
+
+/*Grid boxes*/
+    h1.boxing {
+        box-sizing: border-box;
+        width: 1574px;
+        height: 238px;
+        background: #FFFFFF;
+        border: 20px solid #DED0C5;}
+
+/*dispaly*/
+    .container {
+        display: flex;
+        flex-direction: row;
+        background: #f1eded;
+        border-radius: 20px;}
+        
+        
+
+    .box {
+        flex-flow: row;
+        align-items: center;
+        margin-right: auto;}
+
+    .boxMenu {
+        flex-direction: column;
+    }
+</style>
+
+
+
+
+
+</html>
