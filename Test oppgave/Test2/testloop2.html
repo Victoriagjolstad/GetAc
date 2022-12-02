@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"> </div>
+    
+    
+   
+</body>
+
+<script>
+// Model
+let tekst1 = 'Hei, jeg på deg!';
+let reversText = '';
+let riktigText = '';
+let tall = 0;
+let kast = 0;
+let tekstBoks = '';
+let tekstBoks2= ';'
+let tekstBoks3= '';
+let colorText = 'red';
+let sizeText = 20;
+let colorBackground = 'blue';
+let changeText = 'Hva heter du?'
+const frukt = ['Eple', 'Banan', 'Kiwi', 'Vannmelon']
+
+// View
+tilfeldigKast()
+tilfeldigTall()
+fruktListe()
+show ();
+function show(){
+    let HTML = '';
+    // Revers Loop
+    for (let i = tekst1.length -1; i > 0; i--) {
+        reversText += tekst1[i]
+        // console.log(reversText);
+        
+    }
+    // Riktig Loop
+    for (let i = 0; i < tekst1.length; i++) {
+        riktigText += tekst1[i];
+        // console.log(riktigText);
+    }
+
+   
+
+    
+    HTML += /*HTML*/`
+    <button onclick="tilfeldigTall()">Random Tall</button> <BR>
+    
+    ${tall} <BR>
+    <button onclick="numbers('*')">gange</button>
+    <button onclick="numbers('+')">numbers pluss</button>
+    <button onclick="numbers('-')">numbers minus</button>
+    ${kast} <BR>   
+    ${tekstBoks}<BR>
+    ${tekstBoks2}<BR>
+    ${tekstBoks3}<BR>
+
+        ${createHeader('pink', 50, 'yellow', 'Endret med parameter'/*Denne returner en div via parametere*/)} 
+        <h5 style="color: ${colorText}; font-size: ${sizeText}px; background-color: ${colorBackground};"> ${changeText} </h5>
+        <button onclick="changeHeader('blue', 50, 'green', 'Denne blir blå ')">Blå</button> 
+        <button onclick="changeHeader('pink', 70, 'red', 'Denne blir rosa')">Rosa</button> <BR>
+        
+        
+    
+        `;
+   
+        document.getElementById('app').innerHTML = HTML;
+}
+
+// Controller
+function tilfeldigTall () {
+    tall = Math.floor(Math.random() *100 +1);
+    tekstBoks2 += `<li>${tall}</li>`
+    show()
+    console.log(tall)
+}
+
+ // Loop Random Kast 5 ganger -->Hjelp
+function tilfeldigKast(){
+    for (let i = 0; i < 5; i++) {
+        let loopTall = Math.floor(Math.random() *6 +1);
+        tekstBoks += `<li>${loopTall}</li>`
+        // for (j = 0; j < loopTall; j++) {
+        //     kast++;
+        //     tekstBoks += kast + "<BR>";
+        //     show()
+        //     console.log(kast);
+        // }
+        
+        
+    }
+}
+
+// Sende med parameter
+    function changeHeader(textColor, textSize, backgroundColor, textChange) {
+        colorText = textColor;
+        sizeText = textSize;
+        colorBackground = backgroundColor;
+        changeTekst = textChange;
+        show();
+    }
+
+    function createHeader (textColor, textSize, backgroundColor, textChange) {
+        return `<h5 style="color: ${textColor}; ${createHeaderFont(textSize)} ${creatBackGroundColor(backgroundColor)};">${textChange}</h5>`
+        show()    
+    }
+
+    function createHeaderFont(textSize) {
+            return ` font-size: ${textSize}px;`;
+
+        }
+   
+        function creatBackGroundColor(backgroundColor) {
+        return ` background-color: ${backgroundColor};`}
+
+// For loop list av Array
+function fruktListe() {
+    for (let i = 0; i < frukt.length; i++) {
+        tekstBoks3 += '<li>' + frukt[i] + '</li>';
+
+    }
+}
+
+
+// Parameter pluss, minus, gange
+function numbers(parameter) {
+    if (parameter == "+"){
+        tall++;
+    }
+    else if(parameter == "-"){
+        tall--;
+    } 
+    else if(parameter == "*"){
+        tall = tall * 2;
+    }
+    show()
+}
+
+
+
+
+</script>
+
+</html>
