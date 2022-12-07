@@ -6,37 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+         display: grid;
+         place-items: center;       
+        }
+        div {
+            height: 25px;
+             width: 25px;
+             border-radius: 50%; 
+        }
+        
+        #app {
+             height: 25px;
+             width: 25px;
+             border-radius: 50%;
+             background: rgb(126, 70, 70);
+            
+         }
+     
+         .pink {
+             background: rgb(212, 98, 145);
+         }
+     
+         .green {
+            background: rgb(75, 134, 90);
+         }
+     
+         .blue {
+            background: rgb(94, 120, 188);
+         }
+     
+         .purple {
+            background: rgb(154, 97, 207);
+         }
+     
+     </style>
+     
 </head>
-<style>
-    #lampe {
-        display: grid;
-        place-items: center;
-        height: 25px;
-        width: 25px;
-        border-radius: 50%;
-        background-color: rgb(14, 13, 13);
-    }
-
-    .pink {
-        background-color: rgb(212, 98, 145);
-    }
-
-    .green {
-        background-color: rgb(75, 134, 90);
-    }
-
-    .blue {
-        background-color: rgb(94, 120, 188);
-    }
-
-    .purple {
-        background-color: rgb(154, 97, 207);
-    }
-
-</style>
 
 <body>
     <div id="app"></div>
+   
 </body>
 
 <Script>
@@ -49,25 +60,28 @@
     show()
     function show() {
         let HTML = '';
-        HTML += /*HMTL*/`
-    ${circle("blue").repeat()}
-    ${circle("pink").repeat()}
-    ${circle("pink").repeat()}
-    ${circle("pink").repeat()}
-    ${circle("pink").repeat()}
+        
+        HTML += /*HTML*/`
+        <h1>Får ikke en drit til å funke</h1>
+    ${circle("lampe", "blue").repeat()}
+    ${circle("lampe", "pink").repeat()}
+    ${circle("lampe", "green").repeat()}
+    ${circle("lampe", "pruple").repeat()}
+    ${circle("lampe", "pink").repeat()}
    
-    `; document.getElementById('app').innerHTML = HTML;
+    `; 
+    document.getElementById('app').innerHTML = HTML;
     }
 
 
     // Controller
 
-    function circle(color) {
-        return `<div class="lampe${color}"></div>
-        <div class="lampe${color}"></div>
-        <div class="lampe${color}"></div>
-        <div class="lampe${color}"></div>
-        <div class="lampe${color}"></div>`
+    function circle(lampe ,piececolor) {
+        return `<div class="${lampe}${piececolor}"></div>
+        <div class="${}${piececolor}"></div>
+        <div class="${lampe}${piececolor}"></div>
+        <div class="${lampe}${piececolor}"></div>
+        <div class="${lampe}${piececolor}"></div>`
         show();
     }
 
