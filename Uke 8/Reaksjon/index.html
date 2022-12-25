@@ -9,12 +9,15 @@
     <style>
         body{
          display: grid;
-         place-items: center;       
+         grid-template-columns: repeat(5, 50px);
+            grid-template-rows: repeat(5, 50px);
         }
-        div {
+
+        .lampe {
             height: 25px;
              width: 25px;
              border-radius: 50%; 
+             background: blueviolet;
         }
         
         #app {
@@ -47,12 +50,13 @@
 
 <body>
     <div id="app"></div>
+    
    
 </body>
 
 <Script>
     // Model
-
+    let emptyStr = '';
 
     // View
 
@@ -62,12 +66,12 @@
         let HTML = '';
         
         HTML += /*HTML*/`
-        <h1>Får ikke en drit til å funke</h1>
-    ${circle("lampe", "blue").repeat()}
-    ${circle("lampe", "pink").repeat()}
-    ${circle("lampe", "green").repeat()}
-    ${circle("lampe", "pruple").repeat()}
-    ${circle("lampe", "pink").repeat()}
+        <h1>Får ikke en drit til å funke</h1> <BR>
+    ${circle("lampe", "blue")}
+    ${circle("lampe", "pink")}
+    ${circle("lampe", "green")}
+    ${circle("lampe", "pruple")}
+    ${circle("lampe", "pink")}
    
     `; 
     document.getElementById('app').innerHTML = HTML;
@@ -76,12 +80,12 @@
 
     // Controller
 
-    function circle(lampe ,piececolor) {
-        return `<div class="${lampe}${piececolor}"></div>
-        <div class="${}${piececolor}"></div>
-        <div class="${lampe}${piececolor}"></div>
-        <div class="${lampe}${piececolor}"></div>
-        <div class="${lampe}${piececolor}"></div>`
+    function circle(lampe , piececolor) {
+        return /*HTML*/`<span class="${lampe}${piececolor}"></span>
+        <span class="${lampe}${piececolor}"></span>
+        <span class="${lampe}${piececolor}"></span>
+        <span class="${lampe}${piececolor}"></span>
+        <span class="${lampe}${piececolor}"></span>`
         show();
     }
 
