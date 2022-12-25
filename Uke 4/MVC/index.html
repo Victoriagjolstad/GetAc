@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Virw Controller</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+    <Script>
+
+        ///document.getElementById('textValue')
+           // function showText() {
+               //document.getElementById('app').innerHTML = textValue.value;
+           //}
+       
+       //MODEL -variabler som blir oppdatert og endret på//
+         
+       let textValue = '';
+       let output = '';
+       
+       //VIEW - der hvor vi skriver HTML og det som sytes på skjermen
+       view();
+       function view() {
+           document.getElementById('app').innerHTML = /*HTML*/`
+           <div> Div: ${output} </div>
+           <input type="textValue" type="text">
+           <button onclick="showText()">Send</button>`}
+       
+       
+       //CONTROLLER
+       
+       function showText(){
+           output += textValue;
+           view();
+       }
+    
+       </Script>
+
+</body>
+
+
+</html>
