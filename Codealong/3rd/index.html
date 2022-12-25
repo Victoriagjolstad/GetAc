@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    
+</body>
+
+<script>
+// Model
+let tekst1 = 'Hei på deg. Hallo, god dag. Hade.'
+let nytekst1  = '';
+let numbers = [1, 3, 10, 17, 53, 96];
+let pluss = 0;
+
+// View
+reversText()
+show()
+function show(){
+    let HTML = '';
+    
+
+
+    HTML += /*HTML*/ `
+    <button onclick="reversText()">Reverser Teksten</button>
+    <button onclick=""></button>
+    <input type="text">
+    ${nytekst1};
+
+    `;
+    document.getElementById('app').innerHTML = HTML;
+}
+
+// Controller
+function reversText() {
+    for (let i = tekst1.length -1; i < 0 ; i--) {
+    nytekst1 += tekst1[i];
+    } 
+    console.log(nytekst1);
+}
+
+function sumNumbersOver20 () {
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] >= 20 ) {
+           pluss += numbers
+        } 
+ } console.log(sumNumbersOver20);
+}
+
+</script>
+</html>
