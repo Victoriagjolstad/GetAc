@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Stoppeklokke</h1>
+    <div id="stoppeKlokke"> </div>
+    <button onclick="startKnapp()"> Start</button>
+    <button onclick="stop()"> Stop</button>
+    <button onclick="rest()"> Rest</button>
+    
+</body>
+
+<script>
+    //Model//
+//const stoppeKlokke = document.getElementById('stoppeKlokke');
+let rest = '';
+let seconds = 0;
+var timer;
+
+    //View//
+    view();
+    function view() {
+    document.getElementById('stoppeklokke').innerHTML = setInterval;
+    stoppeKlokke();}
+
+    //Controller//
+    function startKnapp() {
+        setInterval(countSeconds, 1000);
+        stoppeKlokke();
+    }
+
+    function countSeconds() {
+        stoppeKlokke.innerHTML = seconds;
+        seconds++;
+        stoppeKlokke();
+    }
+
+    function stop() {
+        return
+    }
+
+    function rest() {
+        clearInterval(timer)
+        seconds = 0;
+    }
+</script>
+</html>
