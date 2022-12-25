@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="tall"></div>
+    <button onclick="gange()">Double</button>
+    <button onclick="pluss()">Øke med 1</button>
+    <button onclick="redusere()">Reduser med 1</button>
+    
+</body>
+
+<script>
+let tall = 1;
+
+function teller() {
+    document.getElementById('tall').innerHTML = tall;
+}
+
+function gange() {
+    tall = tall * 2;
+    teller();
+}
+
+function pluss() {
+    tall = tall +1;
+    teller();
+    console.log(tall)
+} 
+
+function redusere() {
+    tall = tall -1;
+    teller();
+    console.log(tall)
+}
+
+
+</script>
+</html>
